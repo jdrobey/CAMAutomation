@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF1787A5-986C-49BE-A04D-4A8341DB00B2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CAMAutomation</RootNamespace>
+    <AssemblyName>CAMAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CAMAutomation.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NXOpen, Version=12.0.2.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\NX2212\NXBIN\managed\NXOpen.dll</HintPath>
+    </Reference>
+    <Reference Include="NXOpen.Guide">
+      <HintPath>..\..\..\..\..\NX2212\NXBIN\managed\NXOpen.Guide.dll</HintPath>
+    </Reference>
+    <Reference Include="NXOpen.UF, Version=12.0.2.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\NX2212\NXBIN\managed\NXOpen.UF.dll</HintPath>
+    </Reference>
+    <Reference Include="NXOpen.Utilities, Version=12.0.2.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\NX2212\NXBIN\managed\NXOpen.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="NXOpenUI, Version=12.0.2.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\NX2212\NXBIN\managed\NXOpenUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlankCoordinateSystemsCreator.cs" />
+    <Compile Include="BlankProbingNotchCreator.cs" />
+    <Compile Include="BlankPreprocessor.cs" />
+    <Compile Include="BoundingBox.cs" />
+    <Compile Include="CADAssemblyCreator.cs" />
+    <Compile Include="CAMAutomation.cs" />
+    <Compile Include="CAMAutomationManager.cs" />
+    <Compile Include="CAMClampingConfigurator.cs" />
+    <Compile Include="CAMFaceAnalyzer.cs" />
+    <Compile Include="CAMFeatureHandler.cs" />
+    <Compile Include="CAMFeatureTypeMap.cs" />
+    <Compile Include="CAMMcsHandler.cs" />
+    <Compile Include="CAMOperation.cs" />
+    <Compile Include="CAMOperationOrderComparer.cs" />
+    <Compile Include="CAMRun.cs" />
+    <Compile Include="CAMMultipleSetupHandler.cs" />
+    <Compile Include="CAMRoughingTemplateSelector.cs" />
+    <Compile Include="CAMSingleSetup.cs" />
+    <Compile Include="CAMWorkpieceHandler.cs" />
+    <Compile Include="ClampingConfiguration.cs" />
+    <Compile Include="ClampingFaces.cs" />
+    <Compile Include="ClampingFacesDetector.cs" />
+    <Compile Include="ComponentFaceAttributeHandler.cs" />
+    <Compile Include="JsonDecoder.cs" />
+    <Compile Include="JsonFeatures.cs" />
+    <Compile Include="ObjectiveFunction.cs" />
+    <Compile Include="ObjectiveFunctionContainer.cs" />
+    <Compile Include="CMMModelPreparation.cs" />
+    <Compile Include="CoordinateSystemsCreator.cs" />
+    <Compile Include="CurveLoop.cs" />
+    <Compile Include="Hole.cs" />
+    <Compile Include="CADCoordinateSystemsCreator.cs" />
+    <Compile Include="CAMReport.cs" />
+    <Compile Include="HolePattern.cs" />
+    <Compile Include="HolePatternsDetector.cs" />
+    <Compile Include="DeviationClasses.cs" />
+    <Compile Include="Machine.cs" />
+    <Compile Include="MachineSelector.cs" />
+    <Compile Include="DeviationGaugeHandler.cs" />
+    <Compile Include="MirrorGeometry.cs" />
+    <Compile Include="NearNetBlankProcessor.cs" />
+    <Compile Include="NXFileImporter.cs" />
+    <Compile Include="InputFileParser.cs" />
+    <Compile Include="OptimizeGeometry.cs" />
+    <Compile Include="MachinedFeaturesDetector.cs" />
+    <Compile Include="CircularList.cs" />
+    <Compile Include="Polygon.cs" />
+    <Compile Include="PointLoop.cs" />
+    <Compile Include="PolygonFace.cs" />
+    <Compile Include="CAMProbePointCreator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportWriter.cs" />
+    <Compile Include="StockClasses.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CAMAutomation.ico" />
+    <None Include="packages.config" />
+    <None Include="Resources\NXSigningResource.res" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
